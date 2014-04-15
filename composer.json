@@ -1,0 +1,19 @@
+{
+    "name": "gamma/richsnippet",
+    "description": "Rich snippets marckup",
+    "type": "bundle",
+    "version": "master",
+    "require": {
+        "php": ">=5.3"
+    },
+    "authors": [
+        {
+            "name": "Evgeniy Kuzmin",
+            "email": "jekccs@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Gamma\\RichSnippet": "" }
+    },
+    "target-dir": "Gamma/RichSnippet"
+}
