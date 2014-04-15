@@ -1,8 +1,8 @@
 <span xmlns:v="http://rdf.data-vocabulary.org/#" typeof="v:Review-aggregate">
     <span rel="v:rating">
-        <span property="v:value">{{ rank.result }}</span> 
-    </span>
-    <span property="v:best">{{ rank.max }}</span> of 
-    <span property="v:votes">{{ rank.count }} </span> 
-    <span property="v:itemreviewed">{{ rank.name }}</span> 
+        <span property="v:value">{{ review.averageRank }}</span> 
+    </span> /
+    <span property="v:best">{{ review.maxRank }}</span> of 
+    <span property="v:votes">{{ review.votes }} </span> 
+    <span property="v:itemreviewed">{{ review.shopName }}</span> 
 </span>

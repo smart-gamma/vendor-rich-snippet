@@ -1,6 +1,6 @@
 {
     "name": "gamma/richsnippet",
-    "description": "Rich snippets marckup",
+    "description": "Rich snippets markup",
     "type": "bundle",
     "version": "master",
     "require": {

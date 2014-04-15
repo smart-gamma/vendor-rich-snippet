@@ -1,13 +1,13 @@
 <?php
 
-namespace LaMelle\ShopBundle\Extensions;
+namespace Gamma\RichSnippet\RichSnippetBundle\Extensions;
 
 use Symfony\Component\Templating\EngineInterface;
-use \Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
+
 /**
  * ShopTwig extension
  */
-class ShopTwig extends \Twig_Extension
+class RichSnippetTwig extends \Twig_Extension
 {
 	private $templating;
 
@@ -31,7 +31,7 @@ class ShopTwig extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'review_aggregate_snippet' => new \Twig_Function_Method($this, 'reviewAggregateSnippet'), // reviews aggregate snippet
+            'review_aggregation_snippet' => new \Twig_Function_Method($this, 'reviewAggregationSnippet'), // reviews aggregate snippet
         );
     }
     
@@ -40,10 +40,15 @@ class ShopTwig extends \Twig_Extension
      * @param type $review
      * @param type $format
      */
-    public function reviewAggregateSnippet($review, $format = 'pdfa') 
+    public function reviewAggregationSnippet($review, $format = 'rdfa') 
     {
-        return $templating->render("GammaRichSnippetBundle:Reviews:". $format .".html.twig", array('review' => $review));
+        return $this->templating->render("GammaRichSnippetBundle:Reviews:". $format .".html.twig", array('review' => $review));
     }
+    
+    public function getName()
+	{
+		return 'gamma_rich_snippet_extension';
+	}    
 }
 
 
