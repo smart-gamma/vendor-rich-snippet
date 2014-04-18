@@ -2,20 +2,20 @@
 
 namespace Gamma\RichSnippet\RichSnippetBundle\Extensions;
 
-use Symfony\Component\Templating\EngineInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * ShopTwig extension
  */
 class RichSnippetTwig extends \Twig_Extension
 {
-	private $templating;
+	private $container;
 
 	private $environment;
 
-	public function __construct(EngineInterface $templating)
+	public function __construct(ContainerInterface $container)
 	{
-		$this->templating = $templating;
+		$this->container = $container;
 	}
 
 	public function initRuntime(\Twig_Environment $environment)
@@ -42,7 +42,7 @@ class RichSnippetTwig extends \Twig_Extension
      */
     public function reviewAggregationSnippet($review, $format = 'rdfa') 
     {
-        return $this->templating->render("GammaRichSnippetBundle:Reviews:". $format .".html.twig", array('review' => $review));
+        return $this->container->get('templating')->render("GammaRichSnippetBundle:Reviews:". $format .".html.twig", array('review' => $review));
     }
     
     public function getName()

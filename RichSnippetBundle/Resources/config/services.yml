@@ -1,6 +1,6 @@
 services: 
    twig.extension.gamma_rich_snippet_extension:
         class: Gamma\RichSnippet\RichSnippetBundle\Extensions\RichSnippetTwig
-        arguments: [@templating.engine.twig]
+        arguments: [@service_container]
         tags:
             - { name: twig.extension }
