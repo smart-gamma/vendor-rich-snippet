@@ -1,8 +1,10 @@
-<span xmlns:v="http://rdf.data-vocabulary.org/#" typeof="v:Review-aggregate">
-    <span rel="v:rating">
-        <span property="v:value">{{ review.averageRank }}</span> 
-    </span> /
-    <span property="v:best">{{ review.maxRank }}</span> {{ 'of'|trans }} 
-    <span property="v:votes">{{ review.votes }} </span> 
-    <span property="v:itemreviewed">{{ review.shopName }}</span> 
-</span>
+{% if review is not empty %}
+    <span xmlns:v="http://rdf.data-vocabulary.org/#" typeof="v:Review-aggregate">
+        <span rel="v:rating">
+            <span property="v:value">{{ review.averageRank }}</span>
+        </span> /
+        <span property="v:best">{{ review.maxRank }}</span> {{ 'of'|trans }}
+        <span property="v:votes">{{ review.votes }} </span>
+        <span property="v:itemreviewed">{{ review.shopName }}</span>
+    </span>
+{% endif %}
